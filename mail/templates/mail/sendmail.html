@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sending email</title>
+<link rel="stylesheet"  href="{% static 'mail/css/bootstrap.css' %}">
+</head>
+<body>
+ <div class="container col-8">
+  <h4 class="text-center">SEND EMAIL</h4>
+   <div class="card bg-dark text-white">
+    <div class="card-body">  
+      <form method="POST">
+ {% csrf_token %}
+ {% for fm in form %}
+  {{fm.label_tag}} {{fm}} <br> 
+ {% endfor%}
+ <input type="submit" name="" class="btn btn-primary" value="Send">
+ </form>
+</div>
+</div>
+</div>
+<script src="{% static 'mail/js/jquery.js'%}"></script>
+ <script src="{% static 'mail/js/popper.js'%}"></script>
+ <script src="{% static 'mail/js/bootstrap.js'%}"></script>
+</body>
+</html>
